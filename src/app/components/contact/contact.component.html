@@ -15,7 +15,7 @@
 
   <div class="row">
     <div class="col-md-8">
-      <form method="post" class="form-contato">
+      <form novalidate *ngIf="form" (submit)="submit()" [formGroup]="form">
         <div class="row">
           <div class="col-sm-6">
             <div class="pretty-input">
@@ -30,9 +30,9 @@
                 <option value="Outro">Outro</option>
               </select>
             </div>
-            <div class="pretty-input">
-              <label for="nome">Nome</label>
-              <input type="text" maxlength="100" id="nome" name="nome" title="Informe seu nome" />
+            <div class="pretty-input form-field">
+                <input matInput type="text" placeholder="Nome" maxlength="200" formControlName="name" [pattern]="namePattern" />
+                <span class="error" *ngIf="formControls.name.errors?.required || formControls.name.errors?.pattern">Informe seu nome e sobrenome iniciados com maiúsculas</span>
             </div>
             <div class="pretty-input">
               <label for="email">E-mail</label>

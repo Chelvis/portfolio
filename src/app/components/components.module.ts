@@ -9,11 +9,14 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { Pg404Component } from './pg404/pg404.component';
 import { RoutingModule } from '../router-module/routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     CarouselModule.forRoot()
   ],
   declarations: [
