@@ -1,0 +1,15 @@
+header {background-color:white; position:fixed; left:0; top:0; width:100%; z-index:999;
+  a.logo { display: block; max-width: 150px; padding: 20px 0;
+    img {display: block; height: auto; width: 100%;}
+  }
+	nav { text-align: right; margin: 0; font-size: 0;
+		ul {display:inline-block; height:100px; margin: 0; padding: 0; list-style: none;
+			li {display:table; float:left; height:100px; padding:0 20px; margin: 0;
+				a {font-size:30px; color:#666; font-weight:100; display:table-cell; vertical-align:middle; border-bottom: 4px solid #666; height:100%;
+					&:hover {text-decoration:none;}
+				}
+				&:last-child a {margin-right:0;}
+			}
+		}
+	}
+}
