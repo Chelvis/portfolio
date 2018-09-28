@@ -1,4 +1,6 @@
-<h2>{{'{'}} <span>SOBRE MIM</span> {{'}'}}</h2>
+<section id="about">
+
+  <h1>{{'{'}} <span>SOBRE MIM</span> {{'}'}}</h1>
 
   <div class="container">
     <div class="row">
@@ -7,64 +9,96 @@
         <div class="seta"><i class="fa fa-angle-left"></i></div>
       </div>
       <div class="col-sm-8">
-        <div class="text-right botoes"><button data-sobre="curriculo">currículo</button><button data-sobre="bio">pessoal</button></div>
-      <div class="sobre bio">
-        <h3 class="hidden">pessoal</h3>
-        <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei na área de Desenvolvimento Web em 2009, e desde então tenho participado do desenvolvimento de diversos projetos para desde empreendedores individuais a empresas renomadas.</p>
-        <p>Gosto de me manter sempre por dentro das tendências do mercado e estar brm atualizado sobre novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho aprimorado meu conhecimento na prática e na auto-didatia.</p>
-        <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e, principalmente, ver os resultados de um trabalho bem feito.</p>
-        <p>Nas horas vagas também trabalho com criação de arte. Sou músico, barbeiro profissional e aprecio momentos com a família. Vegano, apaixonado pela natureza e pelos animais, procuro seguir um estilo de vida sustentável e saudável.</p>
-      </div>
-      <div class="sobre curriculo" style="display:none;">
-                <div>
-                      <h3 class="hidden">corrículo</h3>
-                      <h4>Linguagens</h4>
-                      <ul>
-                          <li>HTML5 <div class="rank" data-rank="5"></div></li>
-                          <li>CSS3 (SASS e LESS) <div class="rank" data-rank="5"></div></li>
-                          <li>JavaScript (jQuery, AngularJS) <div class="rank" data-rank="5"></div></li>
-                          <li>SQL <div class="rank" data-rank="4"></div></li>
-                          <li>PHP <div class="rank" data-rank="4"></div></li>
-                      </ul>
-                      <br>
-                      <h4>Ferramentas</h4>
-                      <ul>
-                          <li>Adobe Dreamweaver <div class="rank" data-rank="5"></div></li>
-                          <li>Adobe Photoshop <div class="rank" data-rank="4"></div></li>
-                          <li>Adobe Illustrator <div class="rank" data-rank="4"></div></li>
-                          <li>Adobe Animate <div class="rank" data-rank="4"></div></li>
-                          <li>Git <div class="rank" data-rank="3"></div></li>
-                          <li>Pacote Office <div class="rank" data-rank="3"></div></li>
-                      </ul>
-                      <br>
-                      <h4>Complementar</h4>
-                      <p>Boas práticas de desenvolvimento web (padrões W3C); Web Responsive (Bootstrap); Pré compiladores de CSS (SASS e LESS); Implementação SEO; Práticas de acessibilidade áudio-visual; Desenvolvimento <i>Cross-browser</i>; Manutenção de computadores; Noções de redes de computadores; Familiarização com MAC OS.</p>
-                      <br>
-                      <h4>Experiência</h4>
-                      <ul>
-                          <li>
-                              <div class="row">
-                                  <div class="col-sm-4">
-                                      <strong>Desenvolvedor Front-End Pleno</strong><br><em>Innova - all around the brand</em><br> <span style="font-size: 14px"> Jun/2017 até o momento</span>
-                                  </div>
-                                  <div class="col-sm-8">
-                                      Em breve um pouco da minha experiência nesta empresa.
-                                  </div>
-                              </div>
-                          </li>
-                          <li>
-                              <div class="row">
-                                  <div class="col-sm-4">
-                                      <strong>Web Designer Pleno</strong><br><em>TheMediaGroup</em><br> <span style="font-size: 14px"> Out/2009 - Mai/2017</span>
-                                  </div>
-                                  <div class="col-sm-8">
-                                      Nesta empresa iniciei minha carreira como auxiliar de web designer. Aqui participei do desenvolvimento de web sites para empresas renomadas como Banco Itaú, Banco do Brasil, Ambev, Petrobras, Vivo, entre muitas outras. Fui responsável pela confecção de diversos relatórios anuais financeiros <i>online</i>.
-                                  </div>
-                              </div>
-                          </li>
-                      </ul>
+        <div class="text-right botoes">
+          <button (click)="displayingData = 'CUR'">CURRÍCULO</button>
+          <button (click)="displayingData = 'PES'">PESSOAL</button>
+          <button (click)="displayingData = 'DEP'">DEPOIMENTOS</button>
         </div>
-      </div>
+        <div class="sobre curriculo" *ngIf="displayingData === 'CUR'">
+            <div>
+              <h2 class="sr-only">Currículo</h2>
+              <h4>Linguagens</h4>
+              <ul>
+                <li>HTML5 <div class="rank" data-rank="5"></div>
+                </li>
+                <li>CSS3 (SASS e LESS) <div class="rank" data-rank="5"></div>
+                </li>
+                <li>JavaScript (jQuery, AngularJS) <div class="rank" data-rank="5"></div>
+                </li>
+                <li>SQL <div class="rank" data-rank="4"></div>
+                </li>
+                <li>PHP <div class="rank" data-rank="4"></div>
+                </li>
+              </ul>
+              <br>
+              <h4>Ferramentas</h4>
+              <ul>
+                <li>Adobe Dreamweaver <div class="rank" data-rank="5"></div>
+                </li>
+                <li>Adobe Photoshop <div class="rank" data-rank="4"></div>
+                </li>
+                <li>Adobe Illustrator <div class="rank" data-rank="4"></div>
+                </li>
+                <li>Adobe Animate <div class="rank" data-rank="4"></div>
+                </li>
+                <li>Git <div class="rank" data-rank="3"></div>
+                </li>
+                <li>Pacote Office <div class="rank" data-rank="3"></div>
+                </li>
+              </ul>
+              <br>
+              <h4>Complementar</h4>
+              <p>Boas práticas de desenvolvimento web (padrões W3C); Web Responsive (Bootstrap); Pré
+                compiladores de CSS (SASS e LESS); Implementação SEO; Práticas de acessibilidade
+                áudio-visual; Desenvolvimento <i>Cross-browser</i>; Manutenção de computadores; Noções de
+                redes de computadores; Familiarização com MAC OS.</p>
+              <br>
+              <h4>Experiência</h4>
+              <ul>
+                <li>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <strong>Desenvolvedor Front-End Pleno</strong><br><em>Innova - all around the
+                        brand</em><br> <span style="font-size: 14px"> Jun/2017 até o momento</span>
+                    </div>
+                    <div class="col-sm-8">
+                      Em breve um pouco da minha experiência nesta empresa.
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <strong>Web Designer Pleno</strong><br><em>TheMediaGroup</em><br> <span style="font-size: 14px">
+                        Out/2009 - Mai/2017</span>
+                    </div>
+                    <div class="col-sm-8">
+                      Nesta empresa iniciei minha carreira como auxiliar de web designer. Aqui
+                      participei do desenvolvimento de web sites para empresas renomadas como Banco
+                      Itaú, Banco do Brasil, Ambev, Petrobras, Vivo, entre muitas outras. Fui
+                      responsável pela confecção de diversos relatórios anuais financeiros <i>online</i>.
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <div class="sobre bio" *ngIf="displayingData === 'PES'">
+          <h2 class="sr-only">Pessoal</h2>
+          <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei a {{'"'}}brincar de desenvolvedor{{'"'}}
+            em 2007, e em 2009 ingressei no mercado profissional. Desde então tenho participado do desenvolvimento de diversos
+            projetos para, desde empreendedores individuais até empresas renomadas.</p>
+          <p>Gosto de me manter sempre por dentro das tendências do mercado e estar bem atualizado sobre
+            novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho
+            aprimorado meu conhecimento na prática e na auto-didatia.</p>
+          <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
+            principalmente, ver os resultados de um trabalho bem feito.</p>
+          <p>Sou músico, barbeiro profissional e aprecio momentos com a família. Vegano, apaixonado
+            pela natureza e pelos animais, procuro seguir um estilo de vida sustentável e saudável.
+            Gosto de pedalar, </p>
+        </div>
       </div>
     </div>
   </div>
+
+</section>

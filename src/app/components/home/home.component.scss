@@ -3,7 +3,7 @@
 
 $color: $chumbo;
 
-/deep/ body {background: mix($color, white, 10%)}
+section {background: mix($color, white, 10%)}
 
 h1 {color:$color;}
 ul.links_circulos {margin:50px 0 0 0; padding: 0; list-style: none;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Contact } from '../../models/contact';
 import { Observable } from 'rxjs';
-import { endPoint } from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactService {
 
-  apiDir = `${endPoint}/contact`;
+  apiDir = 'http://www.kelvinmarques.com.br/portfolio/php_mailer/contato.php';
 
   constructor(
     private http: HttpClient

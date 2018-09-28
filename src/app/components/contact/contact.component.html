@@ -1,69 +1,73 @@
-<div class="container">
-  <h2>{{'{'}} <span>CONTATO</span> {{'}'}}</h2>
-  <p>Entre em contato por Skype, Whatsapp, telefone, e-mail ou pelo formulário<br> de contato abaixo e descubra como
-    divulgar e ampliar o seu negócio na internet.</p>
+<section id="contact">
+  <div class="container">
+    <h1>{{'{'}} <span>CONTATO</span> {{'}'}}</h1>
+    <p>Entre em contato por Skype, Whatsapp, telefone, e-mail ou pelo formulário<br> de contato abaixo e descubra como
+      divulgar e ampliar o seu negócio na internet.</p>
 
-  <div class="row">
-    <div class="col-md-8">
-      <div class="summary">
-        <p>Ops!</p>
-        <p>O formulário parece conter dados incorretos ou omissos. Por favor, siga as etapas abaixo e tente novamente:</p>
-        <ul></ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8">
-      <form novalidate *ngIf="form" (submit)="submit()" [formGroup]="form">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="pretty-input">
-              <label for="assunto">Assunto</label>
-              <select name="assunto" id="assunto">
-                <option style="display:none" value=""></option>
-                <option value="Orçamento">Solicitar orçamento</option>
-                <option value="Erros">Reportar erros e/ou falhas em um projeto</option>
-                <option value="Dúvida">Dúvidas</option>
-                <option value="Reclamações">Reclamações</option>
-                <option value="Elogios ou sugestões">Elogios e/ou sugestões</option>
-                <option value="Outro">Outro</option>
-              </select>
-            </div>
-            <div class="pretty-input form-field">
-                <input matInput type="text" placeholder="Nome" maxlength="200" formControlName="name" [pattern]="namePattern" />
-                <span class="error" *ngIf="formControls.name.errors?.required || formControls.name.errors?.pattern">Informe seu nome e sobrenome iniciados com maiúsculas</span>
-            </div>
-            <div class="pretty-input">
-              <label for="email">E-mail</label>
-              <input type="text" maxlength="100" id="email" name="email" title="Informe seu endereço de e-mail"
-                data-email="Informe um endereço de e-mail válido, como &quot;seu-nome@dominio.com.br&quot;" />
-            </div>
-            <div class="pretty-input">
-              <label for="telefone">Telefone fixo ou celular</label>
-              <input type="text" maxlength="100" id="telefone" name="telefone" title="Informe seu telefone fixo ou celular" />
-            </div>
-            <label style="margin-top: -20px; display: block; font-weight: normal;"><input type="checkbox" /> Este
-              também é o número do meu Whatsapp.</label>
+    <form novalidate *ngIf="form" (submit)="submit()" [formGroup]="form" [class.submited]="formSubmited">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="pretty-input" [class.filled]="form.value.subject">
+            <label>Assunto</label>
+            <select formControlName="subject">
+              <option hidden [value]="null"></option>
+              <option value="Orçamento">Solicitar orçamento</option>
+              <option value="Erros">Reportar erros e/ou falhas em um projeto</option>
+              <option value="Dúvida">Dúvidas</option>
+              <option value="Reclamações">Reclamações</option>
+              <option value="Elogios">Elogios</option>
+              <option value="Sugestões">Sugestões</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <span class="error animated bounceIn" *ngIf="formSubmited && formControls.subject.errors">Selecione o
+              assunto a ser tratado</span>
           </div>
-          <div class="col-sm-6">
-            <div class="pretty-input">
-              <label for="mensagem">Mensagem</label>
-              <textarea maxlength="1000" id="mensagem" name="mensagem" title="Digite uma mensagem"></textarea>
-            </div>
+          <div class="pretty-input form-field" [class.filled]="nameFocus || form.value.name">
+            <label>Nome</label>
+            <input type="text" maxlength="100" formControlName="name" [pattern]="namePattern" (focus)="nameFocus = true"
+              (focusout)="nameFocus = false" />
+            <span class="error animated bounceIn" *ngIf="formSubmited && formControls.name.errors">Informe seu nome e
+              sobrenome iniciados
+              com maiúsculas</span>
+          </div>
+          <div class="pretty-input" [class.filled]="emailFocus || form.value.email">
+            <label>E-mail</label>
+            <input type="email" maxlength="100" formControlName="email" (focus)="emailFocus = true" (focusout)="emailFocus = false" />
+            <span class="error animated bounceIn" *ngIf="formSubmited && formControls.email.errors?.required">Informe
+              seu endereço de
+              e-mail</span>
+            <span class="error animated bounceIn" *ngIf="formSubmited && formControls.email.errors?.email">Informe um
+              endereço de e-mail
+              válido (exemplo@dominio.com.br)</span>
+          </div>
+          <div class="pretty-input" [class.filled]="phoneFocus || form.value.phone">
+            <label for="telefone">Telefone fixo ou móvel</label>
+            <input type="tel" formControlName="phone" (focus)="phoneFocus = true" (focusout)="phoneFocus = false" />
+            <span class="error animated bounceIn" *ngIf="formSubmited && formControls.phone.errors">Informe um número
+              de telefone fixo ou
+              móvel</span>
+          </div>
+          <label><input type="checkbox" formControlName="nWhatsapp" /> Este também é meu número do <i class="fa fa-whatsapp"></i>Whatsapp.</label>
+        </div>
+        <div class="col-sm-6">
+          <div class="pretty-input" [class.filled]="messageFocus || form.value.message">
+            <label for="mensagem">Mensagem</label>
+            <textarea maxlength="1000" formControlName="message" (focus)="messageFocus = true" (focusout)="messageFocus = false"></textarea>
+            <span class="error animated bounceIn" *ngIf="formSubmited && formControls.message.errors">Digite uma
+              mensagem</span>
           </div>
         </div>
-        <br>
-        <button type="submit">ENVIAR</button>
-      </form>
-    </div>
-    <div class="col-md-4">
-      <div class="dados">
-        <i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:kelvin.marques@gmail.com">kelvin.marques@gmail.com</a><br>
-        <i class="fa fa-whatsapp" aria-hidden="true"></i> (11) 98433 3790<br>
-        <i class="fa fa-skype" aria-hidden="true"></i> kelvinmarx1991
       </div>
-    </div>
-  </div>
+      <br>
+      <button type="submit" [disabled]="formSubmited && form.invalid">ENVIAR</button>
+    </form>
 
-</div>
+
+    <div class="dados">
+      <i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:kelvin.marques@gmail.com">kelvin.marques@gmail.com</a><br>
+      <i class="fa fa-whatsapp" aria-hidden="true"></i> (11) 98433 3790<br>
+      <i class="fa fa-skype" aria-hidden="true"></i> kelvinmarx1991
+    </div>
+
+  </div>
+</section>

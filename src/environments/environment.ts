@@ -3,10 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  endPoint: 'http://localhost:3000/'
 };
-
-export const endPoint = 'http://localhost:3000/';
 
 /*
  * In development mode, for easier debugging, you can ignore zone related error

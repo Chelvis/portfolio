@@ -6,6 +6,7 @@ import { ComponentsModule } from './components/components.module';
 import { SharedModule } from './components/shared/shared.module';
 import { RoutingModule } from './router-module/routing.module';
 import { ServicesModule } from './services/services.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,12 @@ import { ServicesModule } from './services/services.module';
     ComponentsModule,
     SharedModule,
     RoutingModule,
+    HttpClientModule,
     ServicesModule
   ],
-  providers: [],
+  providers: [
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

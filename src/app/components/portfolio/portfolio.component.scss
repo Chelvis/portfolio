@@ -1,8 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
+$color: $azul;
+
+section {background: mix($color, white, 10%)}
+
 h1 {color:$azul;}
+
   carousel {
+	  /deep/ .carousel {padding-bottom: 50px;}
 		a {display: block; padding: 10px; position: relative; overflow: hidden;
 			img {width: 100%; border: 1px solid #eee;}
 			span {position: absolute; left: 0; width: 100%; bottom: -100px; padding: 5px 15px 15px; color: white; background: $azul; background: rgba($azul,.8); font-size: 14px; overflow: hidden; transition:.3s;
@@ -11,6 +17,14 @@ h1 {color:$azul;}
 			&:hover {background: $azul;
 				span {bottom: 0;}
 			}
+		}
+		/deep/ .carousel-indicators { bottom: 0;
+			li { background: mix(white, $azul, 50%); height: 5px;
+				&.active {background: $azul;}
+			}
+		}
+		/deep/ .carousel-control {
+			display: none;
 		}
 	}
 	.bx-wrapper {

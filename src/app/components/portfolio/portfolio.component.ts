@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
+import { Job } from 'src/app/models/job';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,38 +9,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private portfolioService: PortfolioService
+  ) { }
 
-  temp: any;
+  portfolio: Job[];
+  itemPerRow = 3;
+  rowPerSlide = 2;
+  slideInterval = false;
 
   ngOnInit() {
-    this.temp = [];
-    setTimeout(() => {
-      const temp2: any = document.getElementsByTagName('a');
 
-      for (let x = 0; x < temp2.length; x++) {
+    this.portfolioService.list().subscribe((data: Job[]) => {
 
-        const temp3 = temp2[x];
+      data.reverse();
 
-        const job: any = {};
+      let row = [];
+      let slide = [];
+      const organizedPortfolio = [];
 
-        console.log(temp3.children);
+      data.forEach((e, i) => {
 
-        if (temp3) {
-          job.link = temp3.getAttribute('href');
-        }
+        row.push(e);
 
-        if (temp3.children.length > 1) {
-        job.title = temp3.children[1].removeChild(temp3.children[1].childNodes[0]).innerHTML;
-          job.imageTitle = temp3.children[0].getAttribute('src');
-          if (temp3.children.children) {
-            job.title = temp3.children[1].children[0].innerHTML;
+        if ((i + 1) % this.itemPerRow === 0) {
+          slide.push(row);
+          row = [];
+          if (slide.length === this.rowPerSlide) {
+            organizedPortfolio.push(slide);
+            slide = [];
           }
         }
+      });
 
-        this.temp.push(job);
+      if (row.length) {
+        slide.push(row);
+        organizedPortfolio.push(slide);
       }
-    }, 1000);
+
+      this.portfolio = organizedPortfolio;
+
+      console.log(this.portfolio);
+
+    });
 
   }
 
