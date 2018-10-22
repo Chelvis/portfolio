@@ -1,4 +1,25 @@
 {
+  "curriculum": {
+    "experiencia": {
+      "html5": 5,
+      "css3": 5,
+      "javascript": 5,
+      "typescript": 5,
+      "angular": 5,
+      "sql": 4,
+      "php": 4
+    },
+    "ferramentas": {
+      "vsCode": 5,
+      "git": 5,
+      "npm": 5,
+      "dreamweaver": 5,
+      "photoshop": 5,
+      "illustrator": 4,
+      "animate": 4,
+      "office": 4
+    }
+  },
   "portfolio": [
     {
       "id": 1,

@@ -17,6 +17,11 @@ export class ContactComponent implements OnInit {
 
   formSubmited = false;
 
+  nameFocus = false;
+  emailFocus = false;
+  phoneFocus = false;
+  messageFocus = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private contactService: ContactService

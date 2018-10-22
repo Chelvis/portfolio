@@ -5,10 +5,10 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4" style="position: relative; z-index: 5;">
-        <img src="imagens/foto.png" class="img-responsive" />
+        <img src="/assets/images/foto.png" class="img-fluid" />
         <div class="seta"><i class="fa fa-angle-left"></i></div>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-8" *ngIf="curriculum">
         <div class="text-right botoes">
           <button (click)="displayingData = 'CUR'">CURRÍCULO</button>
           <button (click)="displayingData = 'PES'">PESSOAL</button>
@@ -18,32 +18,40 @@
             <div>
               <h2 class="sr-only">Currículo</h2>
               <h4>Linguagens</h4>
-              <ul>
-                <li>HTML5 <div class="rank" data-rank="5"></div>
+              <ul *ngIf="expRanks">
+                <li>HTML5 <div class="rank" [innerHTML]="expRanks.html5"></div>
                 </li>
-                <li>CSS3 (SASS e LESS) <div class="rank" data-rank="5"></div>
+                <li>CSS3 (SASS e LESS) <div class="rank" [innerHTML]="expRanks.css3"></div>
                 </li>
-                <li>JavaScript (jQuery, AngularJS) <div class="rank" data-rank="5"></div>
+                <li>JavaScript (jQuery, AngularJS) <div class="rank" [innerHTML]="expRanks.javascript"></div>
                 </li>
-                <li>SQL <div class="rank" data-rank="4"></div>
+                <li>TypeScript <div class="rank" [innerHTML]="expRanks.typescript"></div>
                 </li>
-                <li>PHP <div class="rank" data-rank="4"></div>
+                <li>Angular 2 (último) <div class="rank" [innerHTML]="expRanks.angular"></div>
+                </li>
+                <li>SQL <div class="rank" [innerHTML]="expRanks.sql"></div>
+                </li>
+                <li>PHP <div class="rank" [innerHTML]="expRanks.php"></div>
                 </li>
               </ul>
               <br>
               <h4>Ferramentas</h4>
-              <ul>
-                <li>Adobe Dreamweaver <div class="rank" data-rank="5"></div>
+              <ul *ngIf="toolsRanks">
+                <li>MS Visual Studio Code <div class="rank" [innerHTML]="toolsRanks.vsCode"></div>
                 </li>
-                <li>Adobe Photoshop <div class="rank" data-rank="4"></div>
+                <li>GIT <div class="rank" [innerHTML]="toolsRanks.git"></div>
                 </li>
-                <li>Adobe Illustrator <div class="rank" data-rank="4"></div>
+                <li>NPM <div class="rank" [innerHTML]="toolsRanks.npm"></div>
                 </li>
-                <li>Adobe Animate <div class="rank" data-rank="4"></div>
+                <li>Adobe Dreamweaver <div class="rank" [innerHTML]="toolsRanks.dreamweaver"></div>
                 </li>
-                <li>Git <div class="rank" data-rank="3"></div>
+                <li>Adobe Photoshop <div class="rank" [innerHTML]="toolsRanks.photoshop"></div>
                 </li>
-                <li>Pacote Office <div class="rank" data-rank="3"></div>
+                <li>Adobe Illustrator <div class="rank" [innerHTML]="toolsRanks.illustrator"></div>
+                </li>
+                <li>Adobe Animate <div class="rank" [innerHTML]="toolsRanks.animate"></div>
+                </li>
+                <li>MS Office <div class="rank" [innerHTML]="toolsRanks.office"></div>
                 </li>
               </ul>
               <br>
@@ -59,7 +67,7 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <strong>Desenvolvedor Front-End Pleno</strong><br><em>Innova - all around the
-                        brand</em><br> <span style="font-size: 14px"> Jun/2017 até o momento</span>
+                        brand</em><br> <span style="font-size: 14px"> Jun/2017 até Ago/2018</span>
                     </div>
                     <div class="col-sm-8">
                       Em breve um pouco da minha experiência nesta empresa.

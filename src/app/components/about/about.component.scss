@@ -23,8 +23,8 @@ h1 {color:$laranja;}
 			&:last-child {border: none;}
 		}
 	}
-	.rank { float: right; padding-left: 10px;
-		.fa {color: $amarelo; display: inline-block;}
+	/deep/ .rank { float: right; padding-left: 10px;
+		.fa {color: $amarelo; display: inline-block; margin-left: 3px;}
 	}
 	.tooltip {
 		.tooltip-inner {background: $laranja; color: white; font-family: $fontDefault; font-size: 13px;}
