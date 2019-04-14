@@ -4,15 +4,18 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-4" style="position: relative; z-index: 5;">
+      <div class="col-md-3 col-lg-4 foto">
         <img src="/assets/images/foto.png" class="img-fluid" />
         <div [class]="'seta seta-' + displayingData"><i class="fa fa-angle-left"></i></div>
       </div>
-      <div class="col-sm-8" *ngIf="curriculum">
+      <div class="col-md-9 col-lg-8" *ngIf="curriculum">
         <div class="text-right botoes">
-          <button class="cur" [class.active]="displayingData === 'CUR'" (click)="displayingData = 'CUR'">CURRÍCULO</button>
-          <button class="pes" [class.active]="displayingData === 'PES'" (click)="displayingData = 'PES'">PESSOAL</button>
-          <button class="dep" [class.active]="displayingData === 'DEP'" (click)="displayingData = 'DEP'">DEPOIMENTOS</button>
+          <button class="cur" [class.active]="displayingData === 'CUR'"
+            (click)="displayingData = 'CUR'">CURRÍCULO</button>
+          <button class="pes" [class.active]="displayingData === 'PES'"
+            (click)="displayingData = 'PES'">PESSOAL</button>
+          <button class="dep" [class.active]="displayingData === 'DEP'"
+            (click)="displayingData = 'DEP'">DEPOIMENTOS</button>
         </div>
         <div class="sobre curriculo" *ngIf="displayingData === 'CUR'">
           <div>
@@ -45,8 +48,7 @@
                 <div class="row">
                   <div class="col-sm-4">
                     <strong>Desenvolvedor Front-End Sênior</strong><br><em><a href="http://www.audsat.com.br"
-                      target="_blank">Audsat</a></em><br> <span
-                      style="font-size: 14px"> Set/2018 até o momento</span>
+                        target="_blank">Audsat</a></em><br> <span style="font-size: 14px"> Set/2018 até o momento</span>
                   </div>
                   <div class="col-sm-8">
                     Saindo da caixinha da publicidade, vim atuar com o desenvolvimento de interfaces para sistemas web
@@ -104,20 +106,20 @@
             pela natureza e pelos animais, procuro seguir um estilo de vida sustentável.</p>
         </div>
         <div class="sobre depoimentos" *ngIf="displayingData === 'DEP'">
-            <h2 class="sr-only">Depoimentos de parceiros e clientes</h2>
-            <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei a {{'"'}}brincar de
-              desenvolvedor{{'"'}}
-              em 2007, e em 2009 ingressei no mercado profissional. Desde então tenho participado do desenvolvimento de
-              diversos
-              projetos para desde empreendedores individuais até empresas renomadas.</p>
-            <p>Gosto de me manter sempre por dentro das tendências do mercado e estar bem atualizado sobre
-              novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho
-              aprimorado meu conhecimento na prática e na auto-didatia.</p>
-            <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
-              principalmente, ver os resultados de um trabalho bem feito.</p>
-            <p>Sou músico, barbeiro profissional, ciclista e curto momentos com a família. Sou apaixonado
-              pela natureza e pelos animais, procuro seguir um estilo de vida sustentável.</p>
-          </div>
+          <h2 class="sr-only">Depoimentos de parceiros e clientes</h2>
+          <ng-container *ngFor="let depoiment of depoiments">
+            <div class="row">
+              <div class="col-4 col-lg-3">
+                <img [src]="'/assets/images/depoiments/' + depoiment.pic" class="img-fluid rounded-circle" />
+                <h3>{{depoiment.name}}</h3>
+                <p class="job">{{depoiment.job}}</p>
+              </div>
+              <div class="col-8 col-lg-9">
+                <p>{{depoiment.depoiment}}</p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
       </div>
     </div>
   </div>

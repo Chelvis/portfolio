@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurriculumService } from '../../services/curriculum/curriculum.service';
+import { Depoiment } from 'src/app/models/depoiments';
 
 @Component({
   selector: 'app-components',
@@ -14,13 +15,19 @@ export class AboutComponent implements OnInit {
   libsRanks: any = {};
   toolsRanks: any = {};
 
+  depoiments: Depoiment[];
+
   constructor(
     private curriculumService: CurriculumService
   ) { }
 
   ngOnInit() {
+    this.getCurricyulum();
+    this.getDepoiments();
+  }
 
-    this.curriculumService.get().subscribe(data => {
+  getCurricyulum() {
+    this.curriculumService.getCurriculum().subscribe(data => {
 
       this.expRanks = data.experiencia.map(exp => {
         exp.rank = this.setRankHTML(exp.rank);
@@ -39,6 +46,12 @@ export class AboutComponent implements OnInit {
 
       this.curriculum = data;
 
+    });
+  }
+
+  getDepoiments() {
+    this.curriculumService.getDepoiments().subscribe((data: Depoiment[]) => {
+      this.depoiments = data;
     });
   }
 

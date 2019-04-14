@@ -13,8 +13,12 @@
 
 @mixin breakpoint($point){
 
-  @if ($point == xl){
+  @if ($point == xxl){
     @media (min-width: 1900px){ @content }
+  }  
+
+  @if ($point == xl){
+    @media (min-width: 1200px){ @content }
   }  
   
   @else if ($point == lg){
@@ -30,7 +34,7 @@
   }
 
   @else if ($point == xs){
-    @media  (max-width: 480px){ @content }
+    @media  (max-width: 575px){ @content }
   }
 }
 

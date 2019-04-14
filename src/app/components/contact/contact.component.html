@@ -26,7 +26,7 @@
     <form novalidate *ngIf="form && !formSuccess && !formError" (submit)="submit()" [formGroup]="form"
       [class.submited]="formSubmited">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md">
           <div class="pretty-input" [class.filled]="form.value.subject">
             <label>Assunto</label>
             <select formControlName="subject">
@@ -71,7 +71,7 @@
           <label><input type="checkbox" formControlName="nWhatsapp" /> Este também é meu número do <i
               class="fa fa-whatsapp"></i>Whatsapp.</label>
         </div>
-        <div class="col-sm-6">
+        <div class="col-md">
           <div class="pretty-input" [class.filled]="messageFocus || form.value.message">
             <label for="mensagem">Mensagem</label>
             <textarea maxlength="1000" formControlName="message" (focus)="messageFocus = true"
