@@ -1,0 +1,84 @@
+{
+  "experiencia": [
+    {
+      "name": "HTML5",
+      "rank": 5
+    },
+    {
+      "name": "CSS3 (SASS/LESS)",
+      "rank": 5
+    },
+    {
+      "name": "JavaScript",
+      "rank": 5
+    },
+    {
+      "name": "TypeScript",
+      "rank": 5
+    },
+    {
+      "name": "SQL",
+      "rank": 4
+    },
+    {
+      "name": "PHP",
+      "rank": 4
+    }
+  ],
+  "libs": [
+    {
+      "name": "Angular 2+",
+      "rank": 5
+    },
+    {
+      "name": "Angular Material 2+",
+      "rank": 5
+    },
+    {
+      "name": "Twitter Bootstrap 3+",
+      "rank": 5
+    },
+    {
+      "name": "jQuery 1+",
+      "rank": 5
+    },
+    {
+      "name": "React",
+      "rank": 3
+    },
+    {
+      "name": "Vue.js",
+      "rank": 3
+    }
+  ],
+  "ferramentas": [
+    {
+      "name": "MS Visual Studio Code",
+      "rank": 5
+    },
+    {
+      "name": "Git",
+      "rank": 5
+    },
+    {
+      "name": "Node Pack Manager (NPM)",
+      "rank": 5
+    },
+    {
+      "name": "Adobe Dreamweaver",
+      "rank": 5
+    },
+    {
+      "name": "Adobe Photoshop",
+      "rank": 5
+    },
+    {
+      "name": "Adobe Illustrator",
+      "rank": 4
+    },
+    {
+      "name": "Adobe Animate",
+      "rank": 4
+    }
+  ]
+}

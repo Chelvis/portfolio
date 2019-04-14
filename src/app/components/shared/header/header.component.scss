@@ -1,3 +1,5 @@
+@import 'variables';
+
 header {background-color:white; position:fixed; left:0; top:0; width:100%; z-index:999;
   a.logo { display: block; max-width: 150px; padding: 20px 0;
     img {display: block; height: auto; width: 100%;}
@@ -7,6 +9,12 @@ header {background-color:white; position:fixed; left:0; top:0; width:100%; z-ind
 			li {display:table; float:left; height:100px; padding:0 20px; margin: 0;
 				a {font-size:30px; color:#666; font-weight:100; display:table-cell; vertical-align:middle; border-bottom: 4px solid #666; height:100%;
 					&:hover {text-decoration:none;}
+					&.active {
+						&-verde {border-color: $verde;}
+						&-azul {border-color: $azul;}
+						&-laranja {border-color: $laranja;}
+						&-amarelo {border-color: $amarelo;}
+					}
 				}
 				&:last-child a {margin-right:0;}
 			}

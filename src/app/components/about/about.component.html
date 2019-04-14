@@ -1,110 +1,123 @@
 <section id="about">
 
-  <h1>{{'{'}} <span>SOBRE MIM</span> {{'}'}}</h1>
+  <h1><span>SOBRE MIM</span></h1>
 
   <div class="container">
     <div class="row">
       <div class="col-sm-4" style="position: relative; z-index: 5;">
         <img src="/assets/images/foto.png" class="img-fluid" />
-        <div class="seta"><i class="fa fa-angle-left"></i></div>
+        <div [class]="'seta seta-' + displayingData"><i class="fa fa-angle-left"></i></div>
       </div>
       <div class="col-sm-8" *ngIf="curriculum">
         <div class="text-right botoes">
-          <button (click)="displayingData = 'CUR'">CURRÍCULO</button>
-          <button (click)="displayingData = 'PES'">PESSOAL</button>
-          <button (click)="displayingData = 'DEP'">DEPOIMENTOS</button>
+          <button class="cur" [class.active]="displayingData === 'CUR'" (click)="displayingData = 'CUR'">CURRÍCULO</button>
+          <button class="pes" [class.active]="displayingData === 'PES'" (click)="displayingData = 'PES'">PESSOAL</button>
+          <button class="dep" [class.active]="displayingData === 'DEP'" (click)="displayingData = 'DEP'">DEPOIMENTOS</button>
         </div>
         <div class="sobre curriculo" *ngIf="displayingData === 'CUR'">
-            <div>
-              <h2 class="sr-only">Currículo</h2>
-              <h4>Linguagens</h4>
-              <ul *ngIf="expRanks">
-                <li>HTML5 <div class="rank" [innerHTML]="expRanks.html5"></div>
-                </li>
-                <li>CSS3 (SASS e LESS) <div class="rank" [innerHTML]="expRanks.css3"></div>
-                </li>
-                <li>JavaScript (jQuery, AngularJS) <div class="rank" [innerHTML]="expRanks.javascript"></div>
-                </li>
-                <li>TypeScript <div class="rank" [innerHTML]="expRanks.typescript"></div>
-                </li>
-                <li>Angular 2 (último) <div class="rank" [innerHTML]="expRanks.angular"></div>
-                </li>
-                <li>SQL <div class="rank" [innerHTML]="expRanks.sql"></div>
-                </li>
-                <li>PHP <div class="rank" [innerHTML]="expRanks.php"></div>
-                </li>
-              </ul>
-              <br>
-              <h4>Ferramentas</h4>
-              <ul *ngIf="toolsRanks">
-                <li>MS Visual Studio Code <div class="rank" [innerHTML]="toolsRanks.vsCode"></div>
-                </li>
-                <li>GIT <div class="rank" [innerHTML]="toolsRanks.git"></div>
-                </li>
-                <li>NPM <div class="rank" [innerHTML]="toolsRanks.npm"></div>
-                </li>
-                <li>Adobe Dreamweaver <div class="rank" [innerHTML]="toolsRanks.dreamweaver"></div>
-                </li>
-                <li>Adobe Photoshop <div class="rank" [innerHTML]="toolsRanks.photoshop"></div>
-                </li>
-                <li>Adobe Illustrator <div class="rank" [innerHTML]="toolsRanks.illustrator"></div>
-                </li>
-                <li>Adobe Animate <div class="rank" [innerHTML]="toolsRanks.animate"></div>
-                </li>
-                <li>MS Office <div class="rank" [innerHTML]="toolsRanks.office"></div>
-                </li>
-              </ul>
-              <br>
-              <h4>Complementar</h4>
-              <p>Boas práticas de desenvolvimento web (padrões W3C); Web Responsive (Bootstrap); Pré
-                compiladores de CSS (SASS e LESS); Implementação SEO; Práticas de acessibilidade
-                áudio-visual; Desenvolvimento <i>Cross-browser</i>; Manutenção de computadores; Noções de
-                redes de computadores; Familiarização com MAC OS.</p>
-              <br>
-              <h4>Experiência</h4>
-              <ul>
-                <li>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <strong>Desenvolvedor Front-End Pleno</strong><br><em>Innova - all around the
-                        brand</em><br> <span style="font-size: 14px"> Jun/2017 até Ago/2018</span>
-                    </div>
-                    <div class="col-sm-8">
-                      Em breve um pouco da minha experiência nesta empresa.
-                    </div>
+          <div>
+            <h2 class="sr-only">Currículo</h2>
+            <h4>Linguagens</h4>
+            <ul *ngIf="expRanks">
+              <li *ngFor="let exp of expRanks">{{ exp.name }} <div class="rank" [innerHTML]="exp.rank"></div>
+              </li>
+            </ul>
+            <br>
+            <h4>Frameworks e Libs</h4>
+            <ul *ngIf="toolsRanks">
+              <li *ngFor="let lib of libsRanks">{{ lib.name }} <div class="rank" [innerHTML]="lib.rank"></div>
+              </li>
+            </ul>
+            <br>
+            <h4>Ferramentas</h4>
+            <ul *ngIf="toolsRanks">
+              <li *ngFor="let tool of toolsRanks">{{ tool.name }} <div class="rank" [innerHTML]="tool.rank"></div>
+              </li>
+            </ul>
+            <br>
+            <h4>Complementar</h4>
+            <p>PUG; NPM; Lint; Boas práticas de desenvolvimento (padrões W3C); SEO; Acessibilidade áudio-visual;
+              Desenvolvimento <i>Cross-browser</i>; Noções de redes de computadores; Familiarização com MAC OS.</p>
+            <br>
+            <h4>Experiência</h4>
+            <ul>
+              <li>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <strong>Desenvolvedor Front-End Sênior</strong><br><em><a href="http://www.audsat.com.br"
+                      target="_blank">Audsat</a></em><br> <span
+                      style="font-size: 14px"> Set/2018 até o momento</span>
                   </div>
-                </li>
-                <li>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <strong>Web Designer Pleno</strong><br><em>TheMediaGroup</em><br> <span style="font-size: 14px">
-                        Out/2009 - Mai/2017</span>
-                    </div>
-                    <div class="col-sm-8">
-                      Nesta empresa iniciei minha carreira como auxiliar de web designer. Aqui
-                      participei do desenvolvimento de web sites para empresas renomadas como Banco
-                      Itaú, Banco do Brasil, Ambev, Petrobras, Vivo, entre muitas outras. Fui
-                      responsável pela confecção de diversos relatórios anuais financeiros <i>online</i>.
-                    </div>
+                  <div class="col-sm-8">
+                    Saindo da caixinha da publicidade, vim atuar com o desenvolvimento de interfaces para sistemas web
+                    B2B. Meus dias são feitos de grandes desafios para garantir qualidade de software e desempenho nas
+                    aplicações. Nossas ferramentas inclui facilidades nos processos de financiamento de produção rural,
+                    valoração de imóveis rurais, análise de histórico de safras, entre outras.
                   </div>
-                </li>
-              </ul>
-            </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <strong>Desenvolvedor Front-End Pleno</strong><br><em><a href="http://www.aatb.com.br"
+                        target="_blank">Innova - all around the brand</a></em><br> <span style="font-size: 14px">
+                      Jun/2017 até Ago/2018</span>
+                  </div>
+                  <div class="col-sm-8">
+                    Aqui atuei com profissionais de peso no mercado da publicidade. Fiz parte do desenvolvimento de
+                    sites institucionais e hotsites para empresas como a Veet, Eucatex, Duratex, HCor, Mosaic
+                    fertilizantes e outros.
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <strong>Web Designer Pleno</strong><br><em><a href="http://www.mediagroup.com.br"
+                        target="_blank">TheMediaGroup</a></em><br> <span style="font-size: 14px">
+                      Out/2009 - Mai/2017</span>
+                  </div>
+                  <div class="col-sm-8">
+                    Nesta empresa iniciei minha carreira como auxiliar de web designer. Aqui
+                    participei do desenvolvimento de web sites para empresas renomadas como Banco
+                    Itaú, Banco do Brasil, Ambev, Petrobras, Vivo, entre muitas outras. Fui
+                    responsável pela confecção de diversos relatórios anuais financeiros <i>online</i>.
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
+        </div>
         <div class="sobre bio" *ngIf="displayingData === 'PES'">
-          <h2 class="sr-only">Pessoal</h2>
-          <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei a {{'"'}}brincar de desenvolvedor{{'"'}}
-            em 2007, e em 2009 ingressei no mercado profissional. Desde então tenho participado do desenvolvimento de diversos
+          <h2 class="sr-only">Um pouco sobre mim</h2>
+          <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei a {{'"'}}brincar de
+            desenvolvedor{{'"'}}
+            em 2007, e em 2009 ingressei no mercado profissional. Desde então tenho participado do desenvolvimento de
+            diversos
             projetos para, desde empreendedores individuais até empresas renomadas.</p>
           <p>Gosto de me manter sempre por dentro das tendências do mercado e estar bem atualizado sobre
             novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho
             aprimorado meu conhecimento na prática e na auto-didatia.</p>
           <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
             principalmente, ver os resultados de um trabalho bem feito.</p>
-          <p>Sou músico, barbeiro profissional e aprecio momentos com a família. Vegano, apaixonado
-            pela natureza e pelos animais, procuro seguir um estilo de vida sustentável e saudável.
-            Gosto de pedalar, </p>
+          <p>Sou músico, barbeiro profissional, ciclista e curto momentos com a família. Sou apaixonado
+            pela natureza e pelos animais, procuro seguir um estilo de vida sustentável.</p>
         </div>
+        <div class="sobre depoimentos" *ngIf="displayingData === 'DEP'">
+            <h2 class="sr-only">Depoimentos de parceiros e clientes</h2>
+            <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei a {{'"'}}brincar de
+              desenvolvedor{{'"'}}
+              em 2007, e em 2009 ingressei no mercado profissional. Desde então tenho participado do desenvolvimento de
+              diversos
+              projetos para desde empreendedores individuais até empresas renomadas.</p>
+            <p>Gosto de me manter sempre por dentro das tendências do mercado e estar bem atualizado sobre
+              novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho
+              aprimorado meu conhecimento na prática e na auto-didatia.</p>
+            <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
+              principalmente, ver os resultados de um trabalho bem feito.</p>
+            <p>Sou músico, barbeiro profissional, ciclista e curto momentos com a família. Sou apaixonado
+              pela natureza e pelos animais, procuro seguir um estilo de vida sustentável.</p>
+          </div>
       </div>
     </div>
   </div>

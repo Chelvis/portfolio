@@ -5,18 +5,39 @@ $color: $amarelo;
 
 section {background: mix($color, white, 10%)}
 
-h1 {color:$amarelo;}
-	form {display: block; text-align: left;
-		.pretty-input {display: block; position: relative; margin: 30px 0 0;
-			input, textarea, select {display: block; color: $chumbo; background: mix(white, $amarelo, 50%); border: 0; height: 40px; padding: 5px 10px; width: 100%;}
-			textarea {height: 250px;}
-			label {position: absolute; line-height: 40px; padding: 0 10px; cursor: text; left: 0; top: 0; font-weight: normal;  color: mix(white, $chumbo, 50%); transition:.3s; pointer-events: none; }
-			&.filled {
-				label {font-size: 12px; color: $chumbo; top: -15px; line-height: 12px; padding: 0;}
-      }
-      .error {color: $laranja; font-size: 13px; line-height: 1; display: block; padding-top: 3px;}
+h1 span {
+	&::before, &::after {color:$amarelo;}
+}
+
+form {display: block; text-align: left;
+	.pretty-input {display: block; position: relative; margin: 25px 0 5px;
+		input, textarea, select {display: block; color: $chumbo; background: mix(white, $amarelo, 50%); border: 0; height: 40px; padding: 5px 10px; width: 100%;}
+		textarea {height: 235px;}
+		label {position: absolute; line-height: 40px; padding: 0 10px; cursor: text; left: 0; top: 0; font-weight: normal;  color: mix(white, $chumbo, 50%); transition:.3s; pointer-events: none; }
+		&.filled {
+			input, textarea, select {background: $amarelo;}
+			label {font-size: 12px; color: $chumbo; top: -15px; line-height: 12px; padding: 0;}
+	}
+	.error {color: $laranja; font-size: 13px; line-height: 1; display: block; padding-top: 3px;}
+	}
+	button {color: $chumbo; border: 0; background: $amarelo; padding: 10px 30px; cursor: pointer; transition:.3s;
+		&[disabled] {opacity: .5; pointer-events: none;}
+		&:hover {transform: scale(1.2)}
+	}
+}
+
+.message { padding: 20px;
+	&.form {
+		&-success {background: mix($verde, white, 20%);
+			h2 {color: $verde}
 		}
-		button {color: $chumbo; border: 0; background: $amarelo; padding: 10px 20px; transition:.3s;;
-			&:hover {transform: scale(1.2)}
+		&-error  {background: mix($laranja, white, 20%);
+			h2 {color: $laranja}
 		}
 	}
+	p {margin-bottom: 0}
+}
+
+.dados { margin: 20px 0;
+	a {display: inline-block; margin: 0 20px; color: $laranja;}
+}

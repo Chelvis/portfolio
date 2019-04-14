@@ -1,22 +1,18 @@
 <section id="portfolio">
   <div class="container">
 
-    <h1> {{'{'}} <span>PORTFÓLIO</span> {{'}'}}</h1>
+    <h1><span>PORTFÓLIO</span></h1>
 
-    <carousel *ngIf="portfolio" [interval]="slideInterval">
-      <slide class="animated fadeIn" *ngFor="let slide of portfolio">
-        <div class="row" *ngFor="let row of slide">
-          <div class="col-sm-4" *ngFor="let job of row">
-            <a [href]="job.link" target="_blank">
-              <img [src]="'/assets/images/portfolio/' + job.imageTitle" [alt]="job.title" />
-              <span>
-                <strong>{{job.title}}</strong>
-                {{job.client}}
-              </span>
-            </a>
-          </div>
-        </div>
-      </slide>
-    </carousel>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let job of portfolio">
+        <a class="job" [href]="job.link" target="_blank">
+          <img [src]="'/assets/images/portfolio/' + job.imageTitle" [alt]="job.title" />
+          <span>
+            <strong>{{job.title}}</strong>
+            {{job.client}}
+          </span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>

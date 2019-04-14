@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class PortfolioService {
 
-  apiDir = `${environment.endPoint}portfolio`;
+  apiDir = `${environment.endPoint}portfolio.json`;
 
   constructor(
     private http: HttpClient

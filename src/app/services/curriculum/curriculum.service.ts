@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
 })
 export class CurriculumService {
 
-  apiDir = `${environment.endPoint}curriculum`;
+  apiDir = `${environment.endPoint}curriculum.json`;
 
   constructor(
     private http: HttpClient

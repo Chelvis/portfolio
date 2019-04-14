@@ -13,14 +13,18 @@ export class ContactComponent implements OnInit {
   form: FormGroup;
   formControls: {[key: string]: AbstractControl};
 
-  namePattern = /[A-Z][a-z]*\s[A-Z][a-z]*/;
-
   formSubmited = false;
+  formProcessing = false;
 
   nameFocus = false;
   emailFocus = false;
   phoneFocus = false;
   messageFocus = false;
+
+  formSuccess: boolean;
+  formError: boolean;
+
+  phoneMask;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,34 +37,56 @@ export class ContactComponent implements OnInit {
       name: [null, Validators.required],
       email: [null, Validators.compose([Validators.required, Validators.email])],
       phone: [null, Validators.required],
-      nWhatsapp: false,
+      nWhatsapp: true,
       message: [null, Validators.required]
     });
 
     this.formControls = this.form.controls;
   }
 
+  resetPhoneMask() {
+    this.phoneMask = ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  }
+
+  checkPhoneNumber() {
+    const phoneValue = this.formControls.phone.value.replace(/_/g, '').length;
+    if (phoneValue === 14) {
+      this.phoneMask = ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+    } else if (phoneValue < 14) {
+      this.form.value.phone = '';
+      this.phoneMask = [''];
+    }
+    console.log(phoneValue);
+  }
+
+  writeMessageLineBreaks() {
+    this.form.value.message = this.form.value.message.replace(/\n/g, '<br />');
+  }
+
   submit() {
 
     this.formSubmited = true;
 
-    // Verifica se os dados do cliente, endereço e CEP são todos válidos
-    if (this.form.invalid) {
+    if (this.form.invalid || this.formProcessing) {
       return;
     }
 
-    // this.appComponent.setLoading(true);
+    this.formError = false;
+    this.formProcessing = true;
 
-    // Verifica se é um novo cliente (newClient) ou atualização
+    this.writeMessageLineBreaks();
 
-    this.contactService.post(this.form.value);
-
-    /*
-    this.contactService.post(this.form.value).subscribe((data: Contact) => {
-      alert('Mensagem enviada com sucesso!');
-      // this.appComponent.setLoading(false);
-    }, error => console.log(error));
-    */
+    this.contactService.post(this.form.value).subscribe(
+      () => {
+        this.formSuccess = true;
+      },
+      error => {
+        this.formError = true;
+        this.formProcessing = false;
+        document.querySelector('.form-error').scrollIntoView();
+        console.error(error);
+      }
+    );
   }
 
 }

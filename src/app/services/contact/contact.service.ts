@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactService {
 
-  apiDir = 'http://www.kelvinmarques.com.br/portfolio/php_mailer/contato.php';
+  apiDir = 'http://www.kelvinmarques.com.br/php_mailer/contato.php';
 
   constructor(
     private http: HttpClient

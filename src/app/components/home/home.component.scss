@@ -5,7 +5,9 @@ $color: $verde;
 
 section {background: mix($color, white, 10%); text-align: left;}
 
-h1 {color:$color; text-align: center;}
+h1 span {
+	&::before, &::after {color:$verde;}
+}
 
 .advantages {
   .row{ padding-top: 2em; padding-bottom: 2em; border-bottom: 1px solid #dddddd;
