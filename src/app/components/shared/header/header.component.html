@@ -1,27 +1,31 @@
 <header>
   <div class="container">
-    <div class="row align-items-end">
-      <div class="col-md-3">
-        <a routerLink="/" class="logo">
-          <img src="assets/images/logo.svg" alt="Kelvin Marques - Web Designer" />
+    <div class="row align-items-center">
+      <div class="col-6 col-md-3">
+        <a routerLink="/" class="logo" (click)="menuMobile = false">
+          <img src="assets/images/logo.svg" alt="Kelvin Marques - Web Designer" class="img-fluid" />
         </a>
       </div>
-      <nav class="col-md-9">
-        <ul>
-          <li>
-            <a routerLink="/">início</a>
-          </li>
-          <li>
-            <a routerLink="/portfolio">portfólio</a>
-          </li>
-          <li>
-            <a routerLink="/sobre">sobre mim</a>
-          </li>
-          <li>
-            <a routerLink="/contato">contato</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="col-6 col-md-9 menu">
+        <div *ngIf="menuMobile" class="menu__overflow" (click)="menuMobile = false"></div>
+        <button class="menu__toggle" (click)="menuMobileToggle()"><i [class]="'fa fa-' + (menuMobile ? 'times' : 'bars')"></i> menu</button>
+        <nav [class.open]="menuMobile" (click)="menuMobile = false">
+          <ul>
+            <li>
+              <a routerLink="/" routerLinkActive="active-verde" [routerLinkActiveOptions]="{exact: true}">início</a>
+            </li>
+            <li>
+              <a routerLink="/portfolio" routerLinkActive="active-azul">portfólio</a>
+            </li>
+            <li>
+              <a routerLink="/sobre" routerLinkActive="active-laranja">sobre mim</a>
+            </li>
+            <li>
+              <a routerLink="/contato" routerLinkActive="active-amarelo">contato</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </header>

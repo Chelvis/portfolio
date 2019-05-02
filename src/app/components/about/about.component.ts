@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CurriculumService } from '../../services/curriculum/curriculum.service';
 import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service';
 import { metaData } from 'src/app/models/metaData';
+import { Depoiment } from 'src/app/models/depoiments';
 
 @Component({
   selector: 'app-components',
@@ -11,9 +12,12 @@ import { metaData } from 'src/app/models/metaData';
 export class AboutComponent implements OnInit {
 
   curriculum: any;
-  displayingData = 'CUR';
-  expRanks: any;
-  toolsRanks: any;
+  displayingData: 'CUR' | 'PES' | 'DEP' = 'CUR';
+  expRanks: any = {};
+  libsRanks: any = {};
+  toolsRanks: any = {};
+
+  depoiments: Depoiment[];
 
   constructor(
     private curriculumService: CurriculumService,
@@ -21,42 +25,55 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.setMetaData();
+    this.getCurricyulum();
+    this.getDepoiments();
+  }
 
+  setMetaData() {
     this.metaService.setMetaData(new metaData(
       'Sobre Mim',
       'Um pouco sobre minha história profissional e pessoal.',
       'http://www.kelvinmarques.com.br/sobre',
       'Site, Website, desenvolvimento web, página, Kelvin, Relatório Anual, Solução, Currículo, pessoal, habilidades'
     ));
+  }
 
-    this.expRanks = {};
-    this.toolsRanks = {};
+  getCurricyulum() {
+    this.curriculumService.getCurriculum().subscribe(data => {
 
-    this.curriculumService.get().subscribe(data => {
-
-      Object.keys(data.experiencia).forEach((key) => {
-
-        this.expRanks[key] = '';
-
-        for (let y = 1; y <= data.experiencia[key]; y++) {
-          this.expRanks[key] += '<i class="fa fa-star"></i>';
-        }
-
+      this.expRanks = data.experiencia.map(exp => {
+        exp.rank = this.setRankHTML(exp.rank);
+        return exp;
       });
 
-      Object.keys(data.ferramentas).forEach((key) => {
+      this.libsRanks = data.libs.map(lib => {
+        lib.rank = this.setRankHTML(lib.rank);
+        return lib;
+      });
 
-        this.toolsRanks[key] = '';
-
-        for (let y = 1; y <= data.ferramentas[key]; y++) {
-          this.toolsRanks[key] += '<i class="fa fa-star"></i>';
-        }
-
+      this.toolsRanks = data.ferramentas.map(tool => {
+        tool.rank = this.setRankHTML(tool.rank);
+        return tool;
       });
 
       this.curriculum = data;
 
     });
+  }
+
+  getDepoiments() {
+    this.curriculumService.getDepoiments().subscribe((data: Depoiment[]) => {
+      this.depoiments = data;
+    });
+  }
+
+  setRankHTML(rank) {
+    let html = '';
+    for (let x = 1; x <= rank; x++) {
+      html += '<i class="fa fa-star"></i>';
+    }
+    return html;
   }
 
 }

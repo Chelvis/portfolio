@@ -14,9 +14,6 @@ export class PortfolioComponent implements OnInit {
   ) { }
 
   portfolio: Job[];
-  itemPerRow = 3;
-  rowPerSlide = 2;
-  slideInterval = false;
 
   ngOnInit() {
 
@@ -24,32 +21,7 @@ export class PortfolioComponent implements OnInit {
 
       data.reverse();
 
-      let row = [];
-      let slide = [];
-      const organizedPortfolio = [];
-
-      data.forEach((e, i) => {
-
-        row.push(e);
-
-        if ((i + 1) % this.itemPerRow === 0) {
-          slide.push(row);
-          row = [];
-          if (slide.length === this.rowPerSlide) {
-            organizedPortfolio.push(slide);
-            slide = [];
-          }
-        }
-      });
-
-      if (row.length) {
-        slide.push(row);
-        organizedPortfolio.push(slide);
-      }
-
-      this.portfolio = organizedPortfolio;
-
-      console.log(this.portfolio);
+      this.portfolio = data;
 
     });
 

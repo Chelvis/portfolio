@@ -1,29 +1,30 @@
 @import 'mixins';
 @import 'variables';
 
-$color: $chumbo;
+$color: $verde;
 
-section {background: mix($color, white, 10%)}
-
-h1 {color:$color;}
-ul.links_circulos {margin:50px 0 0 0; padding: 0; list-style: none;
-  li {text-align:center; margin:0 20px; padding: 0; position:relative;
-    a {display:block; width:180px; height:180px; border:1px solid #8B8C8C; border-radius:100%; overflow:hidden; position:relative; z-index:9; @include bg("icones_porque_site.png", no-repeat);
-      span {display:block; position:absolute; background:#8B8C8C; width:56px; height:56px; bottom:-28px; border-radius:100%; text-align:center; color:white; left:50%; margin-left:-28px;
-        i {display:inline-block; margin:6px 0 0 0; font-size:18px;}
-      }
-    }
-    & > span {font-weight:200; position:absolute; left:0; width:100%; text-align:center; z-index:3; bottom:50%; font-size:0; transition:0.4s;}
-    &:hover > span {bottom:102%; font-size:15px;}
-    &> i {display:block; position:absolute; width:56px; left:50%; margin-left:-28px; top:100%; margin-top:-5px; height:1px; background:#8B8C8C; transition:.3s;}
-    &.selected > i {height:50px;}
-  }
+section {background: mix($color, white, 10%);
+  @include breakpoint(md) {text-align: left;}
 }
-a#diferente {background-position: center 40px;}
-a#alcance {background-position: center -138px;}
-a#n_dorme {background-position: center -307px;}
-a#apresentacao {background-position: center -483px;}
-a#versatil {background-position: center -663px;}
-.box-texto {background:#8B8C8C; color:white; padding:20px 30px; border-radius:20px; display:none; margin-top:30px;
-  h3 {color:#363635;}
+
+h1 span {
+	&::before, &::after {color:$verde;}
+}
+
+.advantages {
+  .row{ padding-top: 2em; padding-bottom: 2em; border-bottom: 1px solid #dddddd;
+    &:nth-child(even) {flex-direction: row-reverse}
+    &:last-child {border: none}
+  }
+  .icon {display: block; margin: 0 auto; max-width: 200px; width: 100%; background: $color; border-radius: 50%;
+    &:before {content: ''; display: block; padding-top: 100%;}
+    img {position: absolute; left: 20%; top: 20%; width: 60%; max-height: 60%; height: auto;}
+  }
+  p {margin: 0;}
+  h2 {text-align: center; margin: 1rem 0;}
+
+  @include breakpoint(md) {
+    .icon {display: inline-block; margin: 0; }
+    h2 {text-align: left; margin-bottom: .5rem;}
+  }
 }
