@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurriculumService } from '../../services/curriculum/curriculum.service';
+import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service';
+import { metaData } from 'src/app/models/metaData';
 
 @Component({
   selector: 'app-components',
@@ -14,10 +16,18 @@ export class AboutComponent implements OnInit {
   toolsRanks: any;
 
   constructor(
-    private curriculumService: CurriculumService
+    private curriculumService: CurriculumService,
+    private metaService: MetaTagsService
   ) { }
 
   ngOnInit() {
+
+    this.metaService.setMetaData(new metaData(
+      'Sobre Mim',
+      'Um pouco sobre minha história profissional e pessoal.',
+      'http://www.kelvinmarques.com.br/sobre',
+      'Site, Website, desenvolvimento web, página, Kelvin, Relatório Anual, Solução, Currículo, pessoal, habilidades'
+    ));
 
     this.expRanks = {};
     this.toolsRanks = {};
