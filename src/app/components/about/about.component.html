@@ -91,34 +91,38 @@
           </div>
         </div>
         <div class="sobre bio" *ngIf="displayingData === 'PES'">
-          <h2 class="sr-only">Um pouco sobre mim</h2>
-          <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei a {{'"'}}brincar de
-            desenvolvedor{{'"'}}
-            em 2007, e em 2009 ingressei no mercado profissional. Desde então tenho participado do desenvolvimento de
-            diversos
-            projetos para, desde empreendedores individuais até empresas renomadas.</p>
-          <p>Gosto de me manter sempre por dentro das tendências do mercado e estar bem atualizado sobre
-            novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho
-            aprimorado meu conhecimento na prática e na auto-didatia.</p>
-          <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
-            principalmente, ver os resultados de um trabalho bem feito.</p>
-          <p>Sou músico, barbeiro profissional, ciclista e curto momentos com a família. Sou apaixonado
-            pela natureza e pelos animais, procuro seguir um estilo de vida sustentável.</p>
+          <div>
+            <h2 class="sr-only">Um pouco sobre mim</h2>
+            <p>Desde pequeno sou amante da informática, internet e seus recursos. Comecei a {{'"'}}brincar de
+              desenvolvedor{{'"'}}
+              em 2007, e em 2009 ingressei no mercado profissional. Desde então tenho participado do desenvolvimento de
+              diversos
+              projetos para, desde empreendedores individuais até empresas renomadas.</p>
+            <p>Gosto de me manter sempre por dentro das tendências do mercado e estar bem atualizado sobre
+              novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho
+              aprimorado meu conhecimento na prática e na auto-didatia.</p>
+            <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
+              principalmente, ver os resultados de um trabalho bem feito.</p>
+            <p>Sou músico, barbeiro profissional, ciclista e curto momentos com a família. Sou apaixonado
+              pela natureza e pelos animais, procuro seguir um estilo de vida sustentável.</p>
+          </div>
         </div>
         <div class="sobre depoimentos" *ngIf="displayingData === 'DEP'">
-          <h2 class="sr-only">Depoimentos de parceiros e clientes</h2>
-          <ng-container *ngFor="let depoiment of depoiments">
-            <div class="row">
-              <div class="col-4 col-lg-3">
-                <img [src]="'/assets/images/depoiments/' + depoiment.pic" class="img-fluid rounded-circle" />
-                <h3>{{depoiment.name}}</h3>
-                <p class="job">{{depoiment.job}}</p>
+          <div>
+            <h2 class="sr-only">Depoimentos de parceiros e clientes</h2>
+            <ng-container *ngFor="let depoiment of depoiments">
+              <div class="row">
+                <div class="col-4 col-lg-3">
+                  <img [src]="'/assets/images/depoiments/' + depoiment.pic" class="img-fluid rounded-circle" />
+                  <h3>{{depoiment.name}}</h3>
+                  <p class="job">{{depoiment.job}}</p>
+                </div>
+                <div class="col-8 col-lg-9">
+                  <p [innerHTML]="depoiment.depoiment"></p>
+                </div>
               </div>
-              <div class="col-8 col-lg-9">
-                <p>{{depoiment.depoiment}}</p>
-              </div>
-            </div>
-          </ng-container>
+            </ng-container>
+          </div>
         </div>
       </div>
     </div>

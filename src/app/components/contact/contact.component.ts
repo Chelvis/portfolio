@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Contact } from '../../models/contact';
 import { ContactService } from '../../services/contact/contact.service';
+import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service';
+import { metaData } from 'src/app/models/metaData';
 
 @Component({
   selector: 'app-contato',
@@ -28,10 +30,25 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private metaService: MetaTagsService
   ) { }
 
   ngOnInit() {
+    this.setMetaData()
+    this.constructForm()
+  }
+
+  setMetaData() {
+    this.metaService.setMetaData(new metaData(
+      'Contato',
+      'Dúvidas, sugestões, orçamentos... Entre em contato.',
+      'http://www.kelvinmarques.com.br/contato',
+      'Site, Website, desenvolvimento web, página, Kelvin, Relatório Anual, Contato, Facebook, Telefone, Mensagem'
+    ));
+  }
+
+  constructForm() {
     this.form = this.formBuilder.group({
       subject: [null, Validators.required],
       name: [null, Validators.required],

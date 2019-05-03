@@ -14,8 +14,12 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.setMetaData();
+  }
+
+  setMetaData() {
     this.metaService.setMetaData(new metaData(
-      null,
+      'Soluções online para o seu negócio',
       'Soluções online para divulgar seu negócio com visibilidade, flexibilidade e facilidade.',
       'http://www.kelvinmarques.com.br/',
       'Site, Website, desenvolvimento web, página, Kelvin, Relatório Anual, Solução'

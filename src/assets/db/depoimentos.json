@@ -1,20 +1,20 @@
 [
   {
-    "name": "Beatriz",
-    "job": "Proprietária da Comunique",
-    "pic": "sample.jpg",
-    "depoiment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "name": "Bianca Braga",
+    "job": "Parceira Proprietária da Comunique",
+    "pic": "bia.jpg",
+    "depoiment": "O mais difícil quando estamos em busca de pessoas para trabalhar conosco é saber se podemos confiar e se o trabalho será feito corretamente. Com o Kelvin isso foi diferente, ele desenvolveu e produziu um site para meu cliente que ficou impecável. Sempre muito atencioso nos detalhes e fez questão de nos ajudar em cada passo para o site perfeito!<br> <br> Superou todas as expectativas! Muito satisfeita em poder trabalhar com ele e trazer essa qualidade para as pessoas com quem eu atendo!"
   },
   {
-    "name": "Jhon Sample",
-    "job": "Business Man",
-    "pic": "sample.jpg",
-    "depoiment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "name": "Márcio Pires",
+    "job": "Parceiro, desenvolvedor web e lojista",
+    "pic": "difas.jpg",
+    "depoiment": "Kelvin é um profissional com muita habilidade. Sua entrega supera qualquer expectativa, conhecimento, prazo e qualidade sem dúvida são os seus diferenciais.<br><br> Recomendo!"
   },
   {
-    "name": "Joe Example",
-    "job": "Business Man",
-    "pic": "sample.jpg",
-    "depoiment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "name": "Marina Fay",
+    "job": "Cliente, Diretora da Fundação ABH",
+    "pic": "abh.jpg",
+    "depoiment": "Além da competência, Kelvin, é muito atencioso e flexível! Trabalha de maneira absolutamente transparente, comunicando todos os passos do processo, inclusive dificuldades encontradas. Ficamos muito satisfeitos com o resultado e o prazo da entrega!<br><br> Recomendamos o trabalho do Kelvin!"
   }
 ]

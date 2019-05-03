@@ -9,7 +9,6 @@ import { Pg404Component } from './pg404/pg404.component';
 import { RoutingModule } from '../router-module/routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextMaskModule  } from 'angular2-text-mask';
-import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
@@ -24,7 +23,6 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     PortfolioComponent,
     AboutComponent,
-    FooterComponent,
     Pg404Component,
   ],
   exports: [
@@ -32,7 +30,6 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     PortfolioComponent,
     AboutComponent,
-    FooterComponent,
     Pg404Component
   ]
 })

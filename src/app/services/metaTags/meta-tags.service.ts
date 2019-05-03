@@ -11,30 +11,23 @@ export class MetaTagsService {
 
   setMetaData(data: metaData) {
 
-    this.titleService.setTitle(`${data.title ? data.title + ' – ' : ''} Kelvin Marques Web Dev`);
+    this.setTitle(data.title);
 
-    this.meta.addTags([
+    this.meta.updateTag({ name: 'description', content: data.description });
+    this.meta.updateTag({ name: 'keywords', content: data.keywords });
 
-      { name: 'description', content: data.description },
-      { name: 'keywords', content: data.keywords },
-      { name: 'author', content: 'Kelvin Marques' },
+    this.meta.updateTag({ property: 'twitter:title', content: data.title });
+    this.meta.updateTag({ property: 'twitter:description', content: data.description });
+    this.meta.updateTag({ property: 'twitter:site', content: data.url });
 
-      { name: 'twitter:title', content: data.title },
-      { name: 'twitter:description', content: data.description },
-      { name: 'twitter:image', content: 'https://alligator.io/images/front-end-cover.png' },
-      { name: 'twitter:site', content: data.url },
-      { name: 'twitter:creator', content: 'Kelvin Marques' },
+    this.meta.updateTag({ property: 'og:title', content: data.title });
+    this.meta.updateTag({ property: 'og:description', content: data.description });
+    this.meta.updateTag({ property: 'og:url', content: data.url });
 
-      { name: 'og:site_name', content: 'Kelvin Marques – Web Developer' },
-      { name: 'og:type', content: 'website' },
-      { name: 'og:locale', content: 'pt-BR' },
-      { name: 'og:title', content: data.title },
-      { name: 'og:description', content: '' },
-      { name: 'og:image', content: '' },
-      { name: 'og:url', content: data.url }
-    ], true)
+  }
 
-
+  setTitle(title?) {
+    this.titleService.setTitle(`${title ? title + ' – ' : ''} Kelvin Marques Web Dev`);
   }
 
 }

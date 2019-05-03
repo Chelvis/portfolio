@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service';
 
 @Component({
   selector: 'app-pg404',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Pg404Component implements OnInit {
 
-  constructor() { }
+  constructor(private metaService: MetaTagsService) { }
 
   ngOnInit() {
+    this.metaService.setTitle('Página não encontrada')
   }
 
 }
