@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   
       { property: 'twitter:title', content: '' },
       { property: 'twitter:description', content: '' },
-      { property: 'twitter:image', content: 'https://alligator.io/images/front-end-cover.png' },
+      { property: 'twitter:image', content: 'http://www.kelvinmarques.com.br/assets/images/share-thumb.jpg' },
       { property: 'twitter:site', content: '' },
       { property: 'twitter:creator', content: 'Kelvin Marques' },
   
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
       { property: 'og:locale', content: 'pt-BR' },
       { property: 'og:title', content: '' },
       { property: 'og:description', content: '' },
-      { property: 'og:image', content: '' },
+      { property: 'og:image', content: 'http://www.kelvinmarques.com.br/assets/images/share-thumb.jpg' },
       { property: 'og:url', content: '' }
     ], true)
   }
