@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-lg-4 foto">
-        <img src="/assets/images/foto.png" class="img-fluid" />
+        <img src="assets/images/foto.png" class="img-fluid" />
         <div [class]="'seta seta-' + displayingData"><i class="fa fa-angle-left"></i></div>
       </div>
       <div class="col-md-9 col-lg-8" *ngIf="curriculum">
@@ -113,7 +113,7 @@
             <ng-container *ngFor="let depoiment of depoiments">
               <div class="row">
                 <div class="col-4 col-lg-3">
-                  <img [src]="'/assets/images/depoiments/' + depoiment.pic" class="img-fluid rounded-circle" />
+                  <img [src]="'assets/images/depoiments/' + depoiment.pic" class="img-fluid rounded-circle" />
                   <h3>{{depoiment.name}}</h3>
                   <p class="job">{{depoiment.job}}</p>
                 </div>

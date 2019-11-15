@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-6 col-lg-4" *ngFor="let job of portfolio">
         <a class="job" [href]="job.link" target="_blank">
-          <img [src]="'/assets/images/portfolio/' + job.imageTitle" [alt]="job.title" />
+          <img [src]="'assets/images/portfolio/' + job.imageTitle" [alt]="job.title" />
           <span>
             <strong>{{job.title}}</strong>
             {{job.client}}

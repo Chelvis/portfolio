@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  endPoint: '/assets/db/'
+  endPoint: 'assets/db/'
 };
 
