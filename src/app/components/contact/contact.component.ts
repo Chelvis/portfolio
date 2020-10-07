@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { Contact } from '../../models/contact';
-import { ContactService } from '../../services/contact/contact.service';
-import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service';
-import { metaData } from 'src/app/models/metaData';
+import { Component, OnInit } from '@angular/core'
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { metaData } from 'src/app/models/metaData'
+import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service'
+import { ContactService } from '../../services/contact/contact.service'
 
 @Component({
   selector: 'app-contato',
@@ -73,7 +72,6 @@ export class ContactComponent implements OnInit {
       this.form.value.phone = '';
       this.phoneMask = [''];
     }
-    console.log(phoneValue);
   }
 
   writeMessageLineBreaks() {

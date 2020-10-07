@@ -11,14 +11,16 @@
         <button class="menu__toggle" (click)="menuMobileToggle()"><i [class]="'fa fa-' + (menuMobile ? 'times' : 'bars')"></i> menu</button>
         <nav [class.open]="menuMobile" (click)="menuMobile = false">
           <ul>
+            <!--
             <li>
               <a routerLink="/" routerLinkActive="active-verde" [routerLinkActiveOptions]="{exact: true}">início</a>
             </li>
-            <li>
-              <a routerLink="/portfolio" routerLinkActive="active-azul">portfólio</a>
-            </li>
+            -->
             <li>
               <a routerLink="/sobre" routerLinkActive="active-laranja">sobre mim</a>
+            </li>
+            <li>
+              <a routerLink="/portfolio" routerLinkActive="active-azul">portfólio</a>
             </li>
             <li>
               <a routerLink="/contato" routerLinkActive="active-amarelo">contato</a>

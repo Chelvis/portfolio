@@ -10,7 +10,7 @@ h1 span {
 }
 
 .foto {position: relative; z-index: 5;
-	img {margin-bottom: 50px; max-width: 300px;}
+	img {margin-bottom: 50px; max-width: 300px; border-radius: 50%;}
 	@include breakpoint(md) {
 		img {max-width: 100%;}
 	}

@@ -39,5 +39,5 @@ form {display: block; text-align: left;
 }
 
 .dados { margin: 20px 0;
-	a {display: inline-block; margin: 0 20px; color: $laranja;}
+	/deep/ a {display: inline-block; margin: 0 20px; color: $laranja;}
 }

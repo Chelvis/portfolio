@@ -9,6 +9,7 @@ import { Pg404Component } from './pg404/pg404.component';
 import { RoutingModule } from '../router-module/routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextMaskModule  } from 'angular2-text-mask';
+import { ContactLinksModule } from './shared/contact-links/contact-links.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { TextMaskModule  } from 'angular2-text-mask';
     RoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    TextMaskModule
+    TextMaskModule,
+    ContactLinksModule
   ],
   declarations: [
     ContactComponent,

@@ -1,13 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
+import { NgModule } from '@angular/core';
 import { RoutingModule } from '../../router-module/routing.module';
+import { ContactLinksModule } from './contact-links/contact-links.module';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    RoutingModule
+    RoutingModule,
+    ContactLinksModule
   ],
   declarations: [
     HeaderComponent,

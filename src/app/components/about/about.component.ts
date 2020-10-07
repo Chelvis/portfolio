@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { CurriculumService } from '../../services/curriculum/curriculum.service';
-import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service';
-import { metaData } from 'src/app/models/metaData';
-import { Depoiment } from 'src/app/models/depoiments';
+import { Component, OnInit } from '@angular/core'
+import { Depoiment } from 'src/app/models/depoiments'
+import { metaData } from 'src/app/models/metaData'
+import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service'
+import { CurriculumService } from '../../services/curriculum/curriculum.service'
 
 @Component({
   selector: 'app-components',
@@ -14,6 +14,7 @@ export class AboutComponent implements OnInit {
   curriculum: any;
   displayingData: 'CUR' | 'PES' | 'DEP' = 'CUR';
   expRanks: any = {};
+  techsRanks: any = {};
   libsRanks: any = {};
   toolsRanks: any = {};
 
@@ -43,6 +44,11 @@ export class AboutComponent implements OnInit {
     this.curriculumService.getCurriculum().subscribe(data => {
 
       this.expRanks = data.experiencia.map(exp => {
+        exp.rank = this.setRankHTML(exp.rank);
+        return exp;
+      });
+
+      this.techsRanks = data.techs.map(exp => {
         exp.rank = this.setRankHTML(exp.rank);
         return exp;
       });

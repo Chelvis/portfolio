@@ -5,17 +5,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-lg-4 foto">
-        <img src="assets/images/foto.png" class="img-fluid" />
+        <img src="assets/images/foto.jpg" class="img-fluid" />
         <div [class]="'seta seta-' + displayingData"><i class="fa fa-angle-left"></i></div>
       </div>
       <div class="col-md-9 col-lg-8" *ngIf="curriculum">
         <div class="text-right botoes">
-          <button class="cur" [class.active]="displayingData === 'CUR'"
-            (click)="displayingData = 'CUR'">CURRÍCULO</button>
-          <button class="pes" [class.active]="displayingData === 'PES'"
-            (click)="displayingData = 'PES'">PESSOAL</button>
-          <button class="dep" [class.active]="displayingData === 'DEP'"
-            (click)="displayingData = 'DEP'">DEPOIMENTOS</button>
+          <button class="cur" [class.active]="displayingData === 'CUR'" (click)="displayingData = 'CUR'">CURRÍCULO</button>
+          <button class="pes" [class.active]="displayingData === 'PES'" (click)="displayingData = 'PES'">PESSOAL</button>
+          <button class="dep" [class.active]="displayingData === 'DEP'" (click)="displayingData = 'DEP'">DEPOIMENTOS</button>
         </div>
         <div class="sobre curriculo" *ngIf="displayingData === 'CUR'">
           <div>
@@ -32,7 +29,13 @@
               </li>
             </ul>
             <br>
-            <h4>Ferramentas</h4>
+            <h4>Ferramentas e Tecnologias</h4>
+            <ul *ngIf="toolsRanks">
+              <li *ngFor="let lib of techsRanks">{{ lib.name }} <div class="rank" [innerHTML]="lib.rank"></div>
+              </li>
+            </ul>
+            <br>
+            <h4>Softwares</h4>
             <ul *ngIf="toolsRanks">
               <li *ngFor="let tool of toolsRanks">{{ tool.name }} <div class="rank" [innerHTML]="tool.rank"></div>
               </li>
@@ -40,15 +43,25 @@
             <br>
             <h4>Complementar</h4>
             <p>PUG; NPM; Lint; Boas práticas de desenvolvimento (padrões W3C); SEO; Acessibilidade áudio-visual;
-              Desenvolvimento <i>Cross-browser</i>; Noções de redes de computadores; Familiarização com MAC OS.</p>
+              Desenvolvimento <i>Cross-browser</i>; Noções de redes de computadores; Familiarização com Ubuntu e MAC OS.</p>
+            <br>
+            <h4>Formação acadêmica</h4>
+            <ul>
+              <li>
+                <strong>MBA</strong> em Engenharia de Software  &nbsp; <span style="font-size: 14px">2021</span><br><em>FIAP (Faculdade de Informática e Administração Paulista)</em>
+              </li>
+              <li>
+                <strong>Tecnólogo</strong> em Sistemas para Internet &nbsp; <span style="font-size: 14px">2014</span><br><em>UniBTA (Universidade Brasileira de Tecnologia Avançada)</em>
+              </li>
+              
+            </ul>
             <br>
             <h4>Experiência</h4>
             <ul>
               <li>
                 <div class="row">
                   <div class="col-sm-4">
-                    <strong>Desenvolvedor Front-End Sênior</strong><br><em><a href="http://www.audsat.com.br"
-                        target="_blank">Audsat</a></em><br> <span style="font-size: 14px"> Set/2018 até o momento</span>
+                    <strong>Desenvolvedor Front-End Sênior</strong><br><em><a href="http://www.audsat.com.br" target="_blank">Audsat</a></em><br> <span style="font-size: 14px"> Set/2018 até o momento</span>
                   </div>
                   <div class="col-sm-8">
                     Saindo da caixinha da publicidade, vim atuar com o desenvolvimento de interfaces para sistemas web
@@ -61,8 +74,7 @@
               <li>
                 <div class="row">
                   <div class="col-sm-4">
-                    <strong>Desenvolvedor Front-End Pleno</strong><br><em><a href="http://www.aatb.com.br"
-                        target="_blank">Innova - all around the brand</a></em><br> <span style="font-size: 14px">
+                    <strong>Desenvolvedor Front-End Pleno</strong><br><em><a href="http://www.aatb.com.br" target="_blank">Innova - all around the brand</a></em><br> <span style="font-size: 14px">
                       Jun/2017 até Ago/2018</span>
                   </div>
                   <div class="col-sm-8">
@@ -75,8 +87,7 @@
               <li>
                 <div class="row">
                   <div class="col-sm-4">
-                    <strong>Web Designer Pleno</strong><br><em><a href="http://www.mediagroup.com.br"
-                        target="_blank">TheMediaGroup</a></em><br> <span style="font-size: 14px">
+                    <strong>Web Designer Pleno</strong><br><em><a href="http://www.mediagroup.com.br" target="_blank">TheMediaGroup</a></em><br> <span style="font-size: 14px">
                       Out/2009 - Mai/2017</span>
                   </div>
                   <div class="col-sm-8">
@@ -99,12 +110,11 @@
               diversos
               projetos para, desde empreendedores individuais até empresas renomadas.</p>
             <p>Gosto de me manter sempre por dentro das tendências do mercado e estar bem atualizado sobre
-              novos métodos e tecnologias. Sou formado em Sistemas para Internet desde 2014 e tenho
-              aprimorado meu conhecimento na prática e na auto-didatia.</p>
+              novos métodos e tecnologias. Meu objetivo na carreira é ser referência no mercado.</p>
             <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
               principalmente, ver os resultados de um trabalho bem feito.</p>
-            <p>Sou músico, barbeiro profissional, ciclista e curto momentos com a família. Sou apaixonado
-              pela natureza e pelos animais, procuro seguir um estilo de vida sustentável.</p>
+            <p>Sou músico, barbeiro, ciclista e curto momentos com a família. Apaixonado
+              pela natureza, procuro seguir um estilo de vida sustentável e em prol da causa animal.</p>
           </div>
         </div>
         <div class="sobre depoimentos" *ngIf="displayingData === 'DEP'">

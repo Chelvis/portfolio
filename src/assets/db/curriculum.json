@@ -25,22 +25,44 @@
       "rank": 4
     }
   ],
+  "techs": [
+    {
+      "name": "GIT",
+      "rank": 5
+    },
+    {
+      "name": "Node.js",
+      "rank": 4
+    },
+    {
+      "name": "Docker",
+      "rank": 3
+    },
+    {
+      "name": "Clouding",
+      "rank": 3
+    }
+  ],
   "libs": [
     {
-      "name": "Angular 2+",
+      "name": "Angular",
       "rank": 5
     },
     {
-      "name": "Angular Material 2+",
+      "name": "Angular Material",
       "rank": 5
     },
     {
-      "name": "Twitter Bootstrap 3+",
+      "name": "Twitter Bootstrap",
       "rank": 5
     },
     {
-      "name": "jQuery 1+",
+      "name": "jQuery",
       "rank": 5
+    },
+    {
+      "name": "Jasmine on Karma",
+      "rank": 4
     },
     {
       "name": "React",
@@ -49,19 +71,15 @@
     {
       "name": "Vue.js",
       "rank": 3
+    },
+    {
+      "name": "Java Springboot",
+      "rank": 2
     }
   ],
   "ferramentas": [
     {
       "name": "MS Visual Studio Code",
-      "rank": 5
-    },
-    {
-      "name": "Git",
-      "rank": 5
-    },
-    {
-      "name": "Node Pack Manager (NPM)",
       "rank": 5
     },
     {
