@@ -1,0 +1,26 @@
+[
+  {
+    "job": "Desenvolvedor Front-End Sênior",
+    "company": "Audsat",
+    "site": "http://www.audsat.com.br",
+    "dateIn": "Set/2018",
+    "dateOut": null,
+    "description": "Saindo da caixinha da publicidade, vim atuar com o desenvolvimento de sistemas web B2B. Meus dias são feitos de grandes desafios visando a melhor qualidade e desempenho nas aplicações. Alguns de nossos clientes são Brasilseg, Santander, Itaú, Sicred e Sicoob. Nosso foco é revolucionar a concessão de crédito agrícola no Brasil e, quem sabe, no mundo."
+  },
+  {
+    "job": "Desenvolvedor Front-End Pleno",
+    "company": "Innova - all around the brand",
+    "site": "https://aatb.com.br",
+    "dateIn": "Jun/2017",
+    "dateOut": "Ago/2018",
+    "description": "Aqui atuei com profissionais de peso no mercado da publicidade. Fiz parte do desenvolvimento de <i>websites</i> institucionais e <i>landing pages</i> para empresas como a Veet, Eucatex, Duratex, HCor, Mosaic Fertilizantes e outros."
+  },
+  {
+    "job": "Web Designer Pleno",
+    "company": "TheMediaGroup",
+    "site": "http://mediagroup.com.br",
+    "dateIn": "Out/2009",
+    "dateOut": "Mai/2017",
+    "description": "Nesta empresa iniciei minha carreira como auxiliar de <i>web designer</i> e ascendi como profissional pleno. Aqui participei do desenvolvimento de <i>websites</i> para empresas renomadas como Banco Itaú, Banco do Brasil, Ambev, Petrobras, Vivo, entre muitas outras. Fui responsável pela confecção de dezenas relatórios anuais financeiros <i>online</i>"
+  }
+]

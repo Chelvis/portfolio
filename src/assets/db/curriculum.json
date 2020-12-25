@@ -17,6 +17,10 @@
       "rank": 5
     },
     {
+      "name": "Node.js",
+      "rank": 4
+    },
+    {
       "name": "SQL",
       "rank": 4
     },
@@ -31,16 +35,16 @@
       "rank": 5
     },
     {
-      "name": "Node.js",
+      "name": "NoSQL",
       "rank": 4
     },
     {
       "name": "Docker",
-      "rank": 3
+      "rank": 4
     },
     {
-      "name": "Clouding",
-      "rank": 3
+      "name": "Cloud Computing",
+      "rank": 4
     }
   ],
   "libs": [
@@ -92,7 +96,7 @@
     },
     {
       "name": "Adobe Illustrator",
-      "rank": 4
+      "rank": 5
     },
     {
       "name": "Adobe Animate",

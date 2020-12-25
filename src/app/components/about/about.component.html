@@ -42,8 +42,8 @@
             </ul>
             <br>
             <h4>Complementar</h4>
-            <p>PUG; NPM; Lint; Boas práticas de desenvolvimento (padrões W3C); SEO; Acessibilidade áudio-visual;
-              Desenvolvimento <i>Cross-browser</i>; Noções de redes de computadores; Familiarização com Ubuntu e MAC OS.</p>
+            <p>UI/UX; Boas práticas de desenvolvimento (Lint, padrões W3C); PUG; SEO; AWS; Acessibilidade áudio-visual;
+              Desenvolvimento <i>Cross-browser</i>; Noções de redes de computadores; Alta proficiência com Windows; Familiarização com Ubuntu e MAC OS.</p>
             <br>
             <h4>Formação acadêmica</h4>
             <ul>
@@ -53,59 +53,19 @@
               <li>
                 <strong>Tecnólogo</strong> em Sistemas para Internet &nbsp; <span style="font-size: 14px">2014</span><br><em>UniBTA (Universidade Brasileira de Tecnologia Avançada)</em>
               </li>
-              
             </ul>
-            <br>
-            <h4>Formação acadêmica</h4>
             <ul>
-              <li>
-                <strong>Egenharia de Software</strong> &nbsp; <span style="font-size: 14px">2021</span><br><em>FIAP (Faculdade de Informática e Administração Paulista)</em>
-              </li>
-              <li>
-                <strong>Sistemas para Internet</strong> &nbsp; <span style="font-size: 14px">2014</span><br><em>UniBTA (Universidade Brasileira de Tecnologia Avançada)</em>
-              </li>
+              <li><strong></strong></li>
             </ul>
             <br>
             <h4>Experiência</h4>
-            <ul>
-              <li>
+            <ul *ngIf="experiences && experiences.length">
+              <li *ngFor="let experience of experiences">
                 <div class="row">
                   <div class="col-sm-4">
-                    <strong>Desenvolvedor Front-End Sênior</strong><br><em><a href="http://www.audsat.com.br" target="_blank">Audsat</a></em><br> <span style="font-size: 14px"> Set/2018 até o momento</span>
+                    <strong>{{ experience.job }}</strong><br><em><a [href]="experience.site" target="_blank">{{ experience.company }}</a></em><br> <span style="font-size: 14px"> {{ experience.dateIn }} até {{ experience.dateOut || 'o momento' }} </span>
                   </div>
-                  <div class="col-sm-8">
-                    Saindo da caixinha da publicidade, vim atuar com o desenvolvimento de interfaces para sistemas web
-                    B2B. Meus dias são feitos de grandes desafios para garantir qualidade de software e desempenho nas
-                    aplicações. Nossas ferramentas inclui facilidades nos processos de financiamento de produção rural,
-                    valoração de imóveis rurais, análise de histórico de safras, entre outras.
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <strong>Desenvolvedor Front-End Pleno</strong><br><em><a href="http://www.aatb.com.br" target="_blank">Innova - all around the brand</a></em><br> <span style="font-size: 14px">
-                      Jun/2017 até Ago/2018</span>
-                  </div>
-                  <div class="col-sm-8">
-                    Aqui atuei com profissionais de peso no mercado da publicidade. Fiz parte do desenvolvimento de
-                    sites institucionais e hotsites para empresas como a Veet, Eucatex, Duratex, HCor, Mosaic
-                    fertilizantes e outros.
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <strong>Web Designer Pleno</strong><br><em><a href="http://www.mediagroup.com.br" target="_blank">TheMediaGroup</a></em><br> <span style="font-size: 14px">
-                      Out/2009 - Mai/2017</span>
-                  </div>
-                  <div class="col-sm-8">
-                    Nesta empresa iniciei minha carreira como auxiliar de web designer. Aqui
-                    participei do desenvolvimento de web sites para empresas renomadas como Banco
-                    Itaú, Banco do Brasil, Ambev, Petrobras, Vivo, entre muitas outras. Fui
-                    responsável pela confecção de diversos relatórios anuais financeiros <i>online</i>.
-                  </div>
+                  <div class="col-sm-8" [innerHTML]="experience.description"></div>
                 </div>
               </li>
             </ul>
@@ -123,7 +83,7 @@
               novos métodos e tecnologias. Meu objetivo na carreira é ser referência no mercado.</p>
             <p>Aprecio desafios, conhecer novas pessoas, compartilhar ideias, aprender um pouco de tudo e,
               principalmente, ver os resultados de um trabalho bem feito.</p>
-            <p>Sou músico, barbeiro, ciclista e curto momentos com a família. Apaixonado
+            <p>Sou músico, barbeiro, ciclista, gamer e curto momentos com a família. Apaixonado
               pela natureza, procuro seguir um estilo de vida sustentável e em prol da causa animal.</p>
           </div>
         </div>

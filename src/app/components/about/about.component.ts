@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Depoiment } from 'src/app/models/depoiments'
+import { Experience } from 'src/app/models/experience'
 import { metaData } from 'src/app/models/metaData'
 import { MetaTagsService } from 'src/app/services/metaTags/meta-tags.service'
 import { CurriculumService } from '../../services/curriculum/curriculum.service'
@@ -20,6 +21,8 @@ export class AboutComponent implements OnInit {
 
   depoiments: Depoiment[];
 
+  experiences: Experience[];
+
   constructor(
     private curriculumService: CurriculumService,
     private metaService: MetaTagsService
@@ -29,6 +32,7 @@ export class AboutComponent implements OnInit {
     this.setMetaData();
     this.getCurricyulum();
     this.getDepoiments();
+    this.geExperience();
   }
 
   setMetaData() {
@@ -71,6 +75,12 @@ export class AboutComponent implements OnInit {
   getDepoiments() {
     this.curriculumService.getDepoiments().subscribe((data: Depoiment[]) => {
       this.depoiments = data;
+    });
+  }
+
+  geExperience() {
+    this.curriculumService.getExperience().subscribe((data: Experience[]) => {
+      this.experiences = data;
     });
   }
 

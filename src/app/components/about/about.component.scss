@@ -35,7 +35,7 @@ h1 span {
 	&.bio {background: $laranja;}
 	&.curriculo {background: $azul; text-align: left;
 		> div {padding: 20px 20px 20px 0;}
-		h4 {font-size: 25px;}
+		h4 {font-size: 25px; color: rgba(white, .7);}
 		a {color: white; text-decoration: underline; 
 			&:hover {color: $amarelo;}
 		}
